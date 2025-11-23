@@ -2,7 +2,6 @@ package main
 
 import (
 	"time"
-	"gorm.io/gorm"
 )
 
 // users table structure
@@ -10,7 +9,7 @@ type User struct {
 	ID        uint      `json:"id" gorm:"primaryKey"`
 	Username  string    `json:"username"`
 	Password  string    `json:"password"`
-	Token     string    `json:"token"` // storing login token here
+	Token     string    `json:"token"`
 	CartID    int       `json:"cart_id"`
 	CreatedAt time.Time `json:"created_at"`
 }
@@ -19,7 +18,7 @@ type User struct {
 type Item struct {
 	ID        uint      `json:"id" gorm:"primaryKey"`
 	Name      string    `json:"name"`
-	Status    string    `json:"status"` // like active or inactive
+	Status    string    `json:"status"`
 	CreatedAt time.Time `json:"created_at"`
 }
 
